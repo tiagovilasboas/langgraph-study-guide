@@ -7,7 +7,9 @@ Este repositório registra minha trajetória de estudo em **IA agêntica com Lan
 ## O que você vai encontrar
 
 - [Trajetória de estudo](docs/trajetoria.md): decisões, erros, correções e aprendizados por etapa.
-- [Modelos mentais](docs/modelos-mentais.md): LangChain, LangGraph, reflexão e ReAct em linguagem direta.
+- [LangChain e LangGraph](docs/langchain-e-langgraph.md): o propósito de cada biblioteca e como elas se complementam.
+- [Laboratórios](docs/labs.md): o que foi feito no curso, com erros e aprendizados.
+- [Modelos mentais](docs/modelos-mentais.md): estado, reflexão e ReAct em linguagem direta.
 - [Práticas autorais](examples/README.md): pequenos exemplos para reproduzir as ideias sem depender do notebook do curso.
 - [Como estudar com responsabilidade](docs/estudo-responsavel.md): limites de credenciais, dados e publicação.
 
