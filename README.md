@@ -71,10 +71,13 @@ Depois de entender esse fluxo, você pode substituir cada função por component
 | [`docs/trajetoria.md`](docs/trajetoria.md) | Decisões, erros, correções e evolução do estudo. |
 | [`docs/modelos-mentais.md`](docs/modelos-mentais.md) | Estado, nós, roteamento, reflexão e ReAct em linguagem direta. |
 | [`docs/estudo-responsavel.md`](docs/estudo-responsavel.md) | Regras para experimentar e publicar sem expor segredos ou material proprietário. |
+| [`docs/decisoes-staff.md`](docs/decisoes-staff.md) | Trade-offs de arquitetura e critérios de prontidão operacional. |
 | [`labs/`](labs/) | Versões autorais resumidas dos quatro exercícios práticos realizados. |
 | [`examples/`](examples/) | Código mínimo executável para visualizar os padrões. |
 
 ## O que muda quando pensamos como Staff
+
+A discussão completa está em [Decisões e trade-offs em nível Staff](docs/decisoes-staff.md).
 
 Um protótipo que “responde bem” é só o começo. Antes de colocar um agente em um produto, vale responder perguntas de arquitetura:
 
