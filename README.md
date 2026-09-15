@@ -1,32 +1,104 @@
-# LangGraph na prática: diário de estudo e guia de construção
+# LangChain e LangGraph na prática
 
-Este repositório registra minha trajetória de estudo em **IA agêntica com LangChain e LangGraph**, acompanhando o curso da IBM na Coursera, e transforma os aprendizados em um guia independente para quem quer praticar com segurança.
+Um guia autoral para entender e experimentar aplicações agênticas com Python, LangChain e LangGraph.
 
-> O curso foi a fonte de estudo e contexto. O texto, os exemplos e as conclusões deste repositório são autorais. O notebook e os materiais proprietários do curso não são redistribuídos aqui.
+Este repositório nasceu durante o estudo do curso [IA agêntica com LangChain e LangGraph](https://www.coursera.org/learn/agentic-ai-with-langchain-and-langgraph), da IBM na Coursera. A proposta é transformar a experiência de laboratório em um caminho útil para outras pessoas: começar pelo modelo mental, observar o fluxo e só depois conectar serviços reais.
 
-## O que você vai encontrar
+> O curso é a referência de estudo. Os textos, exemplos e conclusões aqui são autorais. Os notebooks, vídeos, leituras e respostas de avaliação do curso não são redistribuídos.
 
-- [Auditoria do curso](docs/auditoria-do-curso.md): estrutura, objetivos e estado observado de cada módulo.
-- [Trajetória de estudo](docs/trajetoria.md): decisões, erros, correções e aprendizados por etapa.
-- [LangChain e LangGraph](docs/langchain-e-langgraph.md): o propósito de cada biblioteca e como elas se complementam.
-- [Laboratórios](docs/labs.md): o que foi feito no curso, com erros e aprendizados.
-- [Modelos mentais](docs/modelos-mentais.md): estado, reflexão e ReAct em linguagem direta.
-- [Práticas autorais](examples/README.md): pequenos exemplos para reproduzir as ideias sem depender do notebook do curso.
-- [Como estudar com responsabilidade](docs/estudo-responsavel.md): limites de credenciais, dados e publicação.
+## O que você vai aprender
 
-## Curso de referência
+Ao seguir este guia, você vai conseguir explicar:
 
-- [IA agêntica com LangChain e LangGraph — IBM, Coursera](https://www.coursera.org/learn/agentic-ai-with-langchain-and-langgraph)
+- o papel do LangChain na composição de prompts, modelos e ferramentas;
+- quando um fluxo linear deixa de ser suficiente;
+- como o LangGraph representa estado, nós, arestas e decisões;
+- como Reflection, Reflexion e ReAct organizam ciclos de melhoria e ação;
+- por que validações objetivas devem ser feitas por código;
+- como experimentar sem colocar credenciais ou dados reais no notebook.
 
-Este repositório não substitui o curso. Use o material oficial para aulas, laboratórios, avaliações e instruções atualizadas.
+## LangChain e LangGraph em uma frase
 
-## Por que este guia existe
+**LangChain conecta as peças; LangGraph coordena o fluxo quando existe estado, decisão ou repetição.**
 
-A parte mais útil do estudo não foi decorar APIs. Foi observar o fluxo: um agente recebe estado, decide o próximo passo, usa uma ferramenta quando precisa e encerra quando tem informação suficiente. Quando um requisito é objetivo — por exemplo, limite de caracteres ou formato de saída — a validação precisa ser feita por código, não apenas pela reflexão do modelo.
+Uma cadeia simples pode ser suficiente para receber uma pergunta, montar um prompt e gerar uma resposta. Um grafo ajuda quando o sistema precisa consultar uma ferramenta, avaliar o resultado, escolher outro caminho ou repetir uma etapa até uma condição de parada.
 
-## Status
+```mermaid
+flowchart LR
+    A[Entrada] --> B[Estado]
+    B --> C[Nó: decidir]
+    C -->|precisa de ferramenta| D[Nó: ferramenta]
+    D --> E[Observação]
+    E --> C
+    C -->|pronto| F[Resposta]
+```
 
-Estudo em andamento. Os Módulos 1 e 2 aparecem concluídos na plataforma. O Módulo 3 está incompleto e será documentado conforme for estudado.
+## Comece pelo exemplo executável
+
+O exemplo usa apenas a biblioteca padrão do Python. Ele simula os padrões estudados com dados fictícios, sem API key e sem custo:
+
+```bash
+python3 examples/padroes_autorais.py
+```
+
+O arquivo mostra três ideias pequenas:
+
+1. **Estado:** etapas diferentes atualizam o mesmo objeto.
+2. **Reflexão:** uma resposta é revisada com uma regra objetiva de tamanho.
+3. **ReAct:** o agente decide se precisa de uma ferramenta local simulada, observa o resultado e encerra.
+
+Depois de entender esse fluxo, você pode substituir cada função por componentes reais de LangChain e LangGraph, seguindo a documentação oficial.
+
+## Mapa do repositório
+
+| Caminho | Para que serve |
+|---|---|
+| [`docs/auditoria-do-curso.md`](docs/auditoria-do-curso.md) | Estrutura atual dos módulos, lições e avaliações observadas na Coursera. |
+| [`docs/langchain-e-langgraph.md`](docs/langchain-e-langgraph.md) | Diferença entre as bibliotecas e um esqueleto de fluxo com estado. |
+| [`docs/labs.md`](docs/labs.md) | Relato do que foi feito nos laboratórios e dos aprendizados. |
+| [`docs/trajetoria.md`](docs/trajetoria.md) | Decisões, erros, correções e evolução do estudo. |
+| [`docs/modelos-mentais.md`](docs/modelos-mentais.md) | Estado, nós, roteamento, reflexão e ReAct em linguagem direta. |
+| [`docs/estudo-responsavel.md`](docs/estudo-responsavel.md) | Regras para experimentar e publicar sem expor segredos ou material proprietário. |
+| [`labs/`](labs/) | Versões autorais resumidas dos quatro exercícios práticos realizados. |
+| [`examples/`](examples/) | Código mínimo executável para visualizar os padrões. |
+
+## O que fizemos nos laboratórios
+
+A sequência prática foi:
+
+1. **LangGraph 101:** fluxo com estado, validação, contexto, resposta e encerramento.
+2. **Reflection:** geração, crítica e decisão entre melhorar ou terminar.
+3. **Reflexion com conhecimento externo:** consulta, evidência e revisão condicionada.
+4. **ReAct:** pensamento, ação, entrada da ação, observação e resposta final.
+
+Um detalhe importante apareceu durante a prática: o modelo afirmou que uma resposta respeitava um limite de caracteres quando a contagem real mostrava o contrário. A conclusão vale para qualquer agente: reflexão pode ajudar a melhorar uma saída, mas não substitui um verificador determinístico.
+
+No laboratório ReAct, a busca externa retornou `401 Unauthorized` porque o ambiente ainda tinha um marcador de chave. Nenhuma chave pessoal foi inserida. O erro ficou registrado como aprendizado de segurança e integração.
+
+## Trilha recomendada
+
+Se você está começando, siga esta ordem:
+
+1. leia [LangChain e LangGraph](docs/langchain-e-langgraph.md);
+2. execute o exemplo autoral;
+3. leia [01 — Fluxo com estado](labs/01-fluxo-com-estado.md);
+4. compare Reflection, Reflexion e ReAct nos outros arquivos de [`labs/`](labs/);
+5. só então conecte um modelo ou uma ferramenta em um ambiente seguro;
+6. registre entradas, saídas, erros e condições de parada.
+
+## Relação com o curso
+
+O curso da IBM na Coursera apresenta conceitos, leituras, vídeos, práticas e laboratórios que serviram como base para este estudo. Este repositório ajuda a organizar o aprendizado e oferece referências independentes; ele não substitui a plataforma, as instruções oficiais nem as avaliações.
+
+Para ver a estrutura que foi conferida na conta, consulte a [auditoria do curso](docs/auditoria-do-curso.md).
+
+## Status do estudo
+
+Os Módulos 1 e 2 aparecem concluídos na plataforma. O Módulo 3 está incompleto e será documentado conforme for estudado.
+
+## Como contribuir
+
+Encontrou uma explicação confusa, um exemplo que pode ser mais simples ou uma fonte oficial útil? Abra uma issue descrevendo o ponto e, se possível, proponha uma alteração pequena. A ideia é manter o guia verificável, acessível e útil para quem está praticando.
 
 ## Licença
 
