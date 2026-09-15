@@ -17,6 +17,18 @@ Ao seguir este guia, você vai conseguir explicar:
 - por que validações objetivas devem ser feitas por código;
 - como experimentar sem colocar credenciais ou dados reais no notebook.
 
+## Links oficiais para continuar
+
+- [LangChain — visão geral](https://docs.langchain.com/oss/python/langchain/overview): framework, agentes e integrações.
+- [LangChain — agentes](https://docs.langchain.com/oss/python/langchain/agents): ferramentas, loop de execução e condições de parada.
+- [LangGraph — visão geral](https://docs.langchain.com/oss/python/langgraph/overview): runtime para workflows e agentes com estado.
+- [LangGraph — Graph API](https://docs.langchain.com/oss/python/langgraph/use-graph-api): estado, nós, arestas, sequências, ramificações e loops.
+- [Thinking in LangGraph](https://docs.langchain.com/oss/python/langgraph/thinking-in-langgraph): como decompor um processo antes de escrever o grafo.
+- [Workflows e agentes](https://docs.langchain.com/oss/python/langgraph/workflows-agents): quando usar caminhos determinísticos ou decisões do agente.
+- [LangSmith](https://docs.langchain.com/langsmith/home): rastreamento, depuração e avaliação de aplicações LLM.
+
+Os links apontam para a documentação oficial atual da equipe LangChain.
+
 ## LangChain e LangGraph em uma frase
 
 **LangChain conecta as peças; LangGraph coordena o fluxo quando existe estado, decisão ou repetição.**
@@ -61,6 +73,22 @@ Depois de entender esse fluxo, você pode substituir cada função por component
 | [`docs/estudo-responsavel.md`](docs/estudo-responsavel.md) | Regras para experimentar e publicar sem expor segredos ou material proprietário. |
 | [`labs/`](labs/) | Versões autorais resumidas dos quatro exercícios práticos realizados. |
 | [`examples/`](examples/) | Código mínimo executável para visualizar os padrões. |
+
+## O que muda quando pensamos como Staff
+
+Um protótipo que “responde bem” é só o começo. Antes de colocar um agente em um produto, vale responder perguntas de arquitetura:
+
+| Decisão | Pergunta de revisão | Evidência esperada |
+|---|---|---|
+| Escopo | O que o agente pode decidir e o que continua determinístico? | Diagrama com fronteiras claras. |
+| Estado | Qual é o mínimo de estado necessário para retomar uma execução? | Schema versionado e exemplos de transição. |
+| Ferramentas | Quais ações têm efeito externo e quais são somente leitura? | Contrato de entrada, saída, timeout e erro. |
+| Parada | Quando o fluxo termina, repete ou pede intervenção humana? | Condição de parada testada e limite de iterações. |
+| Observabilidade | Como investigar uma resposta ruim ou uma chamada cara? | Trace por execução, métricas e correlação. |
+| Segurança | Que dados podem entrar no prompt e quais segredos ficam fora dele? | Allowlist, redaction e gestão de segredos. |
+| Custo e latência | Qual é o orçamento por execução e o pior caso? | Cenários medidos, timeout e fallback. |
+
+A escolha entre LangChain e LangGraph deve sair dessas restrições. Um fluxo simples pode começar com abstrações de alto nível; um processo com ciclos, aprovação humana, persistência ou múltiplos agentes precisa tornar o controle explícito.
 
 ## O que fizemos nos laboratórios
 
