@@ -6,6 +6,7 @@ Este repositório registra minha trajetória de estudo em **IA agêntica com Lan
 
 ## O que você vai encontrar
 
+- [Auditoria do curso](docs/auditoria-do-curso.md): estrutura, objetivos e estado observado de cada módulo.
 - [Trajetória de estudo](docs/trajetoria.md): decisões, erros, correções e aprendizados por etapa.
 - [LangChain e LangGraph](docs/langchain-e-langgraph.md): o propósito de cada biblioteca e como elas se complementam.
 - [Laboratórios](docs/labs.md): o que foi feito no curso, com erros e aprendizados.
@@ -25,7 +26,7 @@ A parte mais útil do estudo não foi decorar APIs. Foi observar o fluxo: um age
 
 ## Status
 
-Estudo em andamento. O Módulo 1 foi concluído; o Módulo 2 foi praticado com agentes de reflexão e ReAct. O Módulo 3 ainda será documentado conforme for estudado.
+Estudo em andamento. Os Módulos 1 e 2 aparecem concluídos na plataforma. O Módulo 3 está incompleto e será documentado conforme for estudado.
 
 ## Licença
 
