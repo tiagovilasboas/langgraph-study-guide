@@ -44,6 +44,10 @@ A busca externa retornou `401 Unauthorized` porque o notebook ainda tinha um mar
 
 ## Como reproduzir o aprendizado
 
+## DocChat: RAG multiagente
+
+No DocChat, combinamos preparação de documentos, busca híbrida e uma equipe de agentes coordenada por LangGraph. A busca lexical encontra termos exatos; a vetorial recupera significado. Agentes separados verificam evidências e podem pedir uma revisão quando há contradição. O registro detalhado e o estado da execução estão em [`labs/05-docchat.md`](../labs/05-docchat.md).
+
 Para uma prática independente, recomendamos esta ordem:
 
 1. simular o modelo e as ferramentas com funções determinísticas;

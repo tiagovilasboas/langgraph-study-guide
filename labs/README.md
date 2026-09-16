@@ -8,5 +8,6 @@ Esta pasta guarda versões autorais dos exercícios que praticamos durante o cur
 | `02-agente-de-reflexao.md` | Reflection Agent | concluído no laboratório |
 | `03-reflexao-com-conhecimento.md` | Reflexion com conhecimento externo | concluído no laboratório |
 | `04-react.md` | ReAct com ferramentas | concluído no laboratório; busca externa sem chave |
+| `05-docchat.md` | DocChat: RAG multiagente | setup iniciado no Skills Network; resumo autoral |
 
 Os snippets são pequenos e independentes. Eles servem para relembrar a ideia e montar uma implementação própria, não para substituir o ambiente da Coursera.
