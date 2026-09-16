@@ -1,5 +1,14 @@
 # LangChain e LangGraph: papéis diferentes no mesmo sistema
 
+## A analogia da cozinha
+
+Pense em um restaurante. LangChain é a caixa de ferramentas: ingredientes, utensílios e receitas para conversar com modelos e ferramentas. LangGraph é o mapa da operação: define qual estação trabalha, que estado passa adiante, quando revisar o prato e quando liberar o pedido.
+
+A analogia ajuda a separar duas perguntas:
+
+- **LangChain:** que peças e integrações preciso conectar?
+- **LangGraph:** como o trabalho avança quando há decisões, ciclos ou espera?
+
 ## LangChain organiza as peças
 
 LangChain é uma camada para compor aplicações que usam modelos de linguagem. Ele ajuda a conectar prompts, modelos, mensagens, ferramentas, parsers e memória em uma sequência de chamadas.

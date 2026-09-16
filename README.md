@@ -8,14 +8,27 @@ Este repositório nasceu durante o estudo do curso [IA agêntica com LangChain e
 
 ## O que você vai aprender
 
-Ao seguir este guia, você vai conseguir explicar:
+Ao seguir este guia, você vai entender primeiro a ideia e depois a arquitetura:
 
-- o papel do LangChain na composição de prompts, modelos e ferramentas;
-- quando um fluxo linear deixa de ser suficiente;
-- como o LangGraph representa estado, nós, arestas e decisões;
-- como Reflection, Reflexion e ReAct organizam ciclos de melhoria e ação;
-- por que validações objetivas devem ser feitas por código;
+- o que LangChain e LangGraph resolvem;
+- como estado, nós e decisões formam um fluxo;
+- como Reflection, Reflexion e ReAct funcionam;
+- quais trade-offs aparecem quando o protótipo vira sistema;
 - como experimentar sem colocar credenciais ou dados reais no notebook.
+
+## A explicação simples
+
+Imagine uma cozinha que prepara pedidos.
+
+**LangChain é a caixa de ferramentas da cozinha.** Ela reúne ingredientes e utensílios para conversar com o modelo, montar prompts, chamar ferramentas e organizar respostas. Você consegue preparar um pedido seguindo uma receita linear.
+
+**LangGraph é o mapa de operação da cozinha.** Ele diz qual estação trabalha agora, que informação passa para a próxima, o que acontece quando falta um ingrediente e quando o pedido está pronto. Se houver revisão, repetição ou caminhos diferentes, o mapa deixa isso visível.
+
+Outra analogia: LangChain fornece os músicos e instrumentos; LangGraph é a partitura e o maestro que coordenam entradas, pausas e repetições.
+
+A frase para guardar é:
+
+> **LangChain conecta as peças; LangGraph coordena o fluxo quando existe estado, decisão ou repetição.**
 
 ## Links oficiais para continuar
 
@@ -28,10 +41,6 @@ Ao seguir este guia, você vai conseguir explicar:
 - [LangSmith](https://docs.langchain.com/langsmith/home): rastreamento, depuração e avaliação de aplicações LLM.
 
 Os links apontam para a documentação oficial atual da equipe LangChain.
-
-## LangChain e LangGraph em uma frase
-
-**LangChain conecta as peças; LangGraph coordena o fluxo quando existe estado, decisão ou repetição.**
 
 Uma cadeia simples pode ser suficiente para receber uma pergunta, montar um prompt e gerar uma resposta. Um grafo ajuda quando o sistema precisa consultar uma ferramenta, avaliar o resultado, escolher outro caminho ou repetir uma etapa até uma condição de parada.
 
