@@ -160,7 +160,11 @@ Para ver a estrutura que foi conferida na conta, consulte a [auditoria do curso]
 
 ## Status do estudo
 
-Os Módulos 1 e 2 aparecem concluídos na plataforma. O Módulo 3 está incompleto e será documentado conforme for estudado.
+Concluímos o percurso do curso e registramos os principais aprendizados dos três módulos. A documentação deste repositório continua evoluindo com exemplos autorais e verificáveis.
+
+## Minha consideração sobre o curso
+
+Eu gostei muito da experiência. O curso foi objetivo e didático: apresentou o conceito, mostrou o fluxo em laboratório e conectou a prática com decisões de arquitetura. A sequência ajudou a entender primeiro o problema e depois a ferramenta, sem transformar o estudo em memorização de API.
 
 ## Como contribuir
 

@@ -30,9 +30,14 @@ O padrão ReAct conecta pensamento, ação, entrada da ação e observação. No
 
 Durante a prática, a busca externa falhou porque o exemplo usava um marcador de chave. Nenhuma chave pessoal foi inserida. Isso virou parte do aprendizado: credencial ausente é um estado explícito do sistema, não algo para contornar copiando segredo para o notebook.
 
-## 6. O que ainda está aberto
+## 6. Fechamento do curso
 
-- avançar pelo Módulo 3, sobre sistemas multiagentes e RAG agêntico;
+Concluímos o percurso do curso e organizamos os registros dos três módulos neste repositório. O estudo deixou uma visão prática de LangChain, LangGraph, reflexão, ReAct, sistemas multiagentes e RAG agêntico.
+
+Minha consideração: gostei muito do curso. Achei o conteúdo objetivo e didático, com uma progressão clara entre conceito, laboratório e decisão de arquitetura. Essa combinação tornou mais fácil entender por que usar cada padrão.
+
+## 7. Próximos passos do repositório
+
 - transformar os exemplos em testes pequenos e reproduzíveis;
 - comparar ferramentas simuladas com integrações reais em um ambiente seguro;
 - revisar este guia à medida que novas práticas forem concluídas.
