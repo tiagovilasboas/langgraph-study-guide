@@ -16,6 +16,8 @@ Ao seguir este guia, você vai entender primeiro a ideia e depois a arquitetura:
 - quais trade-offs aparecem quando o protótipo vira sistema;
 - como experimentar sem colocar credenciais ou dados reais no notebook.
 
+O percurso vai do modelo mental à decisão de arquitetura. Cada etapa responde três perguntas: qual problema estamos resolvendo, como o fluxo toma decisões e como verificamos que ele terminou corretamente.
+
 ## A explicação simples
 
 Imagine uma cozinha que prepara pedidos.
@@ -70,6 +72,14 @@ O arquivo mostra três ideias pequenas:
 
 Depois de entender esse fluxo, você pode substituir cada função por componentes reais de LangChain e LangGraph, seguindo a documentação oficial.
 
+### Pré-requisitos
+
+- Python 3.10 ou superior;
+- terminal e Git;
+- curiosidade para testar primeiro com dados fictícios.
+
+O exemplo não exige conta, chave de API ou serviço externo. Para conectar um modelo real, configure os segredos no ambiente local e nunca os salve neste repositório.
+
 ## Mapa do repositório
 
 | Caminho | Para que serve |
@@ -82,7 +92,7 @@ Depois de entender esse fluxo, você pode substituir cada função por component
 | [`docs/folha-de-dicas-multiagentes.md`](docs/folha-de-dicas-multiagentes.md) | Revisão autoral da folha de dicas do Módulo 3. |
 | [`docs/estudo-responsavel.md`](docs/estudo-responsavel.md) | Regras para experimentar e publicar sem expor segredos ou material proprietário. |
 | [`docs/decisoes-staff.md`](docs/decisoes-staff.md) | Trade-offs de arquitetura e critérios de prontidão operacional. |
-| [`labs/`](labs/) | Versões autorais resumidas dos quatro exercícios práticos realizados. |
+| [`labs/`](labs/) | Versões autorais resumidas dos exercícios práticos realizados, incluindo o DocChat. |
 | [`examples/`](examples/) | Código mínimo executável para visualizar os padrões. |
 
 ## O que muda quando pensamos como Staff
@@ -111,10 +121,25 @@ A sequência prática foi:
 2. **Reflection:** geração, crítica e decisão entre melhorar ou terminar.
 3. **Reflexion com conhecimento externo:** consulta, evidência e revisão condicionada.
 4. **ReAct:** pensamento, ação, entrada da ação, observação e resposta final.
+5. **DocChat:** preparação de documentos, RAG multiagente, busca híbrida e verificação de evidências.
 
 Um detalhe importante apareceu durante a prática: o modelo afirmou que uma resposta respeitava um limite de caracteres quando a contagem real mostrava o contrário. A conclusão vale para qualquer agente: reflexão pode ajudar a melhorar uma saída, mas não substitui um verificador determinístico.
 
 No laboratório ReAct, a busca externa retornou `401 Unauthorized` porque o ambiente ainda tinha um marcador de chave. Nenhuma chave pessoal foi inserida. O erro ficou registrado como aprendizado de segurança e integração.
+
+No DocChat, a analogia mais útil foi a de uma equipe de pesquisa: um agente localiza evidências, outro raciocina e outro verifica contradições. A busca lexical encontra termos exatos; a busca vetorial encontra significado. O LangGraph coordena esse trabalho, enquanto LangChain conecta os componentes de RAG e o Gradio apresenta a interface. O resumo completo está em [`labs/05-docchat.md`](labs/05-docchat.md).
+
+## Um roteiro de revisão
+
+Ao terminar cada prática, responda em suas próprias palavras:
+
+1. Qual é o estado mínimo que o fluxo precisa carregar?
+2. Qual nó toma cada decisão e qual evidência ele produz?
+3. O que acontece quando uma ferramenta falha ou não há contexto?
+4. Qual regra pode ser validada por código, sem depender da opinião do modelo?
+5. Onde uma pessoa precisa revisar ou autorizar a próxima ação?
+
+Se você não consegue responder essas perguntas, o próximo passo é observar o fluxo e registrar um exemplo de entrada, transição e saída antes de adicionar mais agentes.
 
 ## Trilha recomendada
 
