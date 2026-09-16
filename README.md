@@ -79,6 +79,7 @@ Depois de entender esse fluxo, você pode substituir cada função por component
 | [`docs/labs.md`](docs/labs.md) | Relato do que foi feito nos laboratórios e dos aprendizados. |
 | [`docs/trajetoria.md`](docs/trajetoria.md) | Decisões, erros, correções e evolução do estudo. |
 | [`docs/modelos-mentais.md`](docs/modelos-mentais.md) | Estado, nós, roteamento, reflexão e ReAct em linguagem direta. |
+| [`docs/folha-de-dicas-multiagentes.md`](docs/folha-de-dicas-multiagentes.md) | Revisão autoral da folha de dicas do Módulo 3. |
 | [`docs/estudo-responsavel.md`](docs/estudo-responsavel.md) | Regras para experimentar e publicar sem expor segredos ou material proprietário. |
 | [`docs/decisoes-staff.md`](docs/decisoes-staff.md) | Trade-offs de arquitetura e critérios de prontidão operacional. |
 | [`labs/`](labs/) | Versões autorais resumidas dos quatro exercícios práticos realizados. |
